@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
 
+const parts = require('./libs/parts');
+
 const PATHS = {
     app: path.join(__dirname, 'app'),
     build: path.join(__dirname, 'build')
@@ -31,7 +33,14 @@ var config;
 // Detect how npm is run and branch based on that
 switch(process.env.npm_lifecycle_event) {
     case 'build':
-        config = merge(common, {});
+        config = merge(
+            common,
+            parts.devServer({
+                // Customize host/port here if needed
+                host: process.env.HOST,
+                port: process.env.PORT
+            })
+        );
         break;
     default:
         config = merge(common, {});
