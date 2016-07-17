@@ -1,6 +1,6 @@
 # React-Webpack
 
-## 시작하기
+## 시작하기 ([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/developing_with_webpack/01_getting_started.md))
 
  - 요구사항 : Node.js
  - 프로젝트 폴더 생성
@@ -61,7 +61,7 @@ package.json 에 간단하게 빌드를 할 수 있도록 명령어를 추가합
       "build": "webpack"
     },
 
-## webpack-merge 설치
+## webpack-merge 설치 ([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/developing_with_webpack/02_splitting_configuration.md))
 웹팩 config 를 분리하여 merge 해주는 플러그인으로, 여러 빌드 환경에 따라 config를 관리하기 쉽게 도와줍니다.
 
     npm install --save-dev webpack-merge
@@ -119,7 +119,7 @@ package.json 에 간단하게 빌드를 할 수 있도록 명령어를 추가합
     module.exports = validate(config);  // 마지막줄 변경
 
 
-## Webpack 개발환경 세팅(webpack-dev-server)
+## Webpack 개발환경 세팅(webpack-dev-server)([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/developing_with_webpack/03_automatic_browser_refresh.md))
 Webpack Dev Server 를 통해서 개발을 할때, 코드수정 후 저장하면 자동으로 브라우저가 새로고침이 됩니다.(LiveReload, Browsersync 와 같은 기능)
 
     npm install --save-dev webpack-dev-server
@@ -188,7 +188,7 @@ libs/parts.js
           })
         );
 
-## CSS loader 설치
+## CSS loader 설치([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/developing_with_webpack/04_refreshing_css.md))
 
     npm install --save-dev css-loader style-loader
 
