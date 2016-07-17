@@ -60,3 +60,50 @@ package.json 에 간단하게 빌드를 할 수 있도록 명령어를 추가합
     "scripts": {
       "build": "webpack"
     },
+
+## webpack-merge 설치
+웹팩 config 를 분리하여 merge 해주는 플러그인으로, 여러 빌드 환경에 따라 config를 관리하기 쉽게 도와줍니다.
+
+    npm install --save-dev webpack-merge
+
+`webpack.config.js` 변경
+
+    const path = require('path');
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+    const merge = require('webpack-merge');
+    
+    const PATHS = {
+        app: path.join(__dirname, 'app'),
+        build: path.join(__dirname, 'build')
+    };
+    
+    const common = {
+        // Entry accepts a path or an object of entries.
+        // We'll be using the latter form given it's
+        // convenient with more complex configurations.
+        entry: {
+            app: PATHS.app
+        },
+        output: {
+            path: PATHS.build,
+            filename: '[name].js'
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                title: 'React-Webpack'
+            })
+        ]
+    };
+    
+    var config;
+    
+    // Detect how npm is run and branch based on that
+    switch(process.env.npm_lifecycle_event) {
+        case 'build':
+            config = merge(common, {});
+            break;
+        default:
+            config = merge(common, {});
+    }
+    
+    module.exports = config;
