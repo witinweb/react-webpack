@@ -1,0 +1,22 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "react, webpack starter kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witinweb/react-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack"
+  },
+  "bugs": {
+    "url": "https://github.com/witinweb/react-webpack/issues"
+  },
+  "homepage": "https://github.com/witinweb/react-webpack#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.1"
+  }
+}
