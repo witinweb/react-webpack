@@ -59,3 +59,16 @@ exports.minify = function() {
         ]
     };
 };
+exports.babel = function() {
+    return {
+        module: {
+            loaders: [
+                {
+                    test: /\.jsx?$/,
+                    loaders: ['babel?cacheDirectory'],
+                    include: PATHS.app
+                }
+            ]
+        }
+    };
+};

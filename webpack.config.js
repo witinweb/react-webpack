@@ -9,6 +9,9 @@ const PATHS = {
     app: path.join(__dirname, 'app'),
     build: path.join(__dirname, 'build')
 };
+const TARGET = process.env.npm_lifecycle_event;
+
+process.env.BABEL_ENV = TARGET;
 
 const common = {
     // Entry accepts a path or an object of entries.
@@ -21,6 +24,9 @@ const common = {
         path: PATHS.build,
         filename: '[name].js'
     },
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Webpack demo'
@@ -31,7 +37,7 @@ const common = {
 var config;
 
 // Detect how npm is run and branch based on that
-switch(process.env.npm_lifecycle_event) {
+switch(TARGET) {
     case 'build':
         config = merge(
             common,
@@ -39,6 +45,7 @@ switch(process.env.npm_lifecycle_event) {
                 devtool: 'source-map'
             },
             parts.minify(),
+            parts.babel(),
             parts.setupCSS(PATHS.app),
             parts.devServer({
                 // Customize host/port here if needed
@@ -53,6 +60,7 @@ switch(process.env.npm_lifecycle_event) {
             {
                 devtool: 'eval-source-map'
             },
+            parts.babel(),
             parts.setupCSS(PATHS.app));
 }
 
