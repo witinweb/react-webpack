@@ -187,3 +187,36 @@ libs/parts.js
             port: process.env.PORT
           })
         );
+
+## CSS loader 설치
+
+    npm install --save-dev css-loader style-loader
+
+/libs/parts.js 에 추가
+
+    exports.setupCSS = function(paths) {
+      return {
+        module: {
+          loaders: [
+            {
+              test: /\.css$/,
+              loaders: ['style', 'css'],
+              include: paths
+            }
+          ]
+        }
+      };
+    }
+
+`webpack.config.js` 에 다음의 형태로 추가
+
+    config = merge(
+      common,
+      parts.setupCSS(PATHS.app)
+    );
+
+/app/style/main.css 생성
+
+`index.js` 에 css파일 추가
+
+    require('./style/main.css');
