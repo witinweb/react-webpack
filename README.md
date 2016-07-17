@@ -239,11 +239,11 @@ libs/parts.js
 		  devtool: 'eval-source-map'
 		},...
 
-## React, React-dom 설치
+## React, React-dom 설치 
 
     npm install --save react react-dom
 
-## babel 설치
+## babel 설치 ([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/advanced_techniques/05_configuring_react.md))
 
     npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react
 
