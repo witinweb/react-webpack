@@ -35,6 +35,7 @@ switch(process.env.npm_lifecycle_event) {
     case 'build':
         config = merge(
             common,
+            parts.setupCSS(PATHS.app),
             parts.devServer({
                 // Customize host/port here if needed
                 host: process.env.HOST,
@@ -43,7 +44,7 @@ switch(process.env.npm_lifecycle_event) {
         );
         break;
     default:
-        config = merge(common, {});
+        config = merge(common, parts.setupCSS(PATHS.app));
 }
 
 module.exports = validate(config);
