@@ -220,3 +220,30 @@ libs/parts.js
 `index.js` 에 css파일 추가
 
     require('./style/main.css');
+
+## Sourcemaps 설정 ([참고](https://github.com/survivejs/webpack/blob/dev/manuscript/developing_with_webpack/05_enabling_sourcemaps.md))
+
+`webpack.config.js` 에 추가
+
+    //build 에 추가
+    config = merge(
+       common,
+	   {
+	     devtool: 'source-map'
+	   },...
+	   
+    //default 에 추가
+    config = merge(
+         common,
+		{
+		  devtool: 'eval-source-map'
+		},...
+
+## React, React-dom 설치
+
+    npm install --save react react-dom
+
+## babel 설치
+
+    npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react
+
