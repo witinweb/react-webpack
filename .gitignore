@@ -39,10 +39,10 @@
    .Trashes
 
    # Dist Directory
-   /dist
+   /build
 
    # Node modules
    /node_modules
 
    # JetBrains
-   .idea
+   /.idea
