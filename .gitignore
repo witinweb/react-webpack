@@ -39,7 +39,7 @@
    .Trashes
 
    # Dist Directory
-   /dist
+   /bundle
 
    # Node modules
    /node_modules
