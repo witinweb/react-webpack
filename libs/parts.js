@@ -35,6 +35,7 @@ exports.devServer = function(options) {
         ]
     };
 };
+/*
 exports.setupCSS = function(paths) {
     return {
         module: {
@@ -47,28 +48,4 @@ exports.setupCSS = function(paths) {
             ]
         }
     };
-};
-exports.minify = function() {
-    return {
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-                compress: {
-                    warnings: false
-                }
-            })
-        ]
-    };
-};
-exports.babel = function() {
-    return {
-        module: {
-            loaders: [
-                {
-                    test: /\.jsx?$/,
-                    loaders: ['babel?cacheDirectory'],
-                    include: PATHS.app
-                }
-            ]
-        }
-    };
-};
+};*/
