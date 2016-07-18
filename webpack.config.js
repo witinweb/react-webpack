@@ -34,7 +34,7 @@ const common = {
                 test: /\.css$/,
                 loaders: ['style', 'css'],
                 // Include accepts either a path or an array of paths.
-                include: PATHS.app
+                include: PATHS.style
             },
             {
                 test: /\.jsx?$/,
